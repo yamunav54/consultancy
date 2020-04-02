@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Polls</title>
+</head>
+<body>
+
+{% if qlist  %}
+<ul>
+    {%  for q in qlist  %}
+        <li><a href="{% url 'detail' q.id %}" >{{ q.qtext  }}</a></li>
+
+<!--    <li><a href="/polls/{{q.id}}" >{{ q.qtext  }}</a></li>-->
+     {%  endfor %}
+</ul>
+{% else %}
+   <p>No polls are available.</p>
+{% endif %}
+
+</body>
+</html>
